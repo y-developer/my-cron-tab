@@ -1,0 +1,12 @@
+name: Gitea Backup
+
+on:
+  schedule:
+    - cron: "15 18 * * *"
+
+jobs:
+  demo:
+    name: Demo Job
+    runs-on: ubuntu-24.04
+    steps:
+      - run: echo "hi"
