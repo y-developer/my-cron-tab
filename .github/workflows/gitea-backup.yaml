@@ -2,7 +2,7 @@ name: Gitea Backup
 
 on:
   schedule:
-    - cron: "0 0 1 * *" # Runs at midnight on the first day of every month
+    - cron: "*/15 * * * *" # Runs every 15 minutes
   workflow_dispatch:
 
 jobs:
@@ -10,4 +10,4 @@ jobs:
     name: Demo Job
     runs-on: ubuntu-24.04
     steps:
-      - run: echo "hi"
+      - run: curl -X POST "https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.TG_CHAT_ID }}&text=Test message"
