@@ -8,9 +8,7 @@ jobs:
     name: Demo Job
     runs-on: ubuntu-24.04
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
       - name: Send Telegram Message
-        uses: ./.github/actions/tg-send-message
+        uses: y-developer/my-cron-tab/.github/actions/tg-send-message@main
         with:
           message: "This is a demo message from the Gitea Backup workflow."
