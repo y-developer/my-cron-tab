@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Send Telegram Message
-        uses: y-developer/my-cron-tab/.github/actions/tg-send-message@main
+        uses: appzic/github-actions/telegram-send-message@89b399445b62d18c0e2b1fae9502704611dba25c
         with:
+          token: ${{ secrets.TG_BOT_TOKEN }}
+          chat_id: ${{ secrets.TG_CHAT_ID }}
           message: "This is a demo message from the Gitea Backup workflow."
