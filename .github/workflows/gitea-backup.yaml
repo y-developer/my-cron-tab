@@ -8,6 +8,8 @@ jobs:
     name: Demo Job
     runs-on: ubuntu-24.04
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
       - name: Send Telegram Message
         uses: ./.github/actions/tg-send-message
         with:
